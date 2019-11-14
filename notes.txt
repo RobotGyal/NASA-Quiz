@@ -1,0 +1,10 @@
+TO BE ADDED
+*  counting of correct/incorrect answers (in a list)
+*  numbering questions
+*  
+
+
+STRETCH 
+*  error handling for input types
+*  menu that lets the user take the quiz multiple times
+*  menu that lets the user choose from a set of multiple quizzes to take

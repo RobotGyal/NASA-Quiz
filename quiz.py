@@ -43,7 +43,7 @@ def multiple_choice_question(question, answer):
         print("You are correct!")
         return 1
     else:
-        print(colors.red, "You are incorrect")
+        print(colors.red, "Incorrect, The answer is: ", answer)
         return 0
 
 def numerical_question(question, answer):
@@ -55,7 +55,7 @@ def numerical_question(question, answer):
     # elif user_answer == answer and user_answer.isdigit == False:
     #     print("Inproper format")
     else:
-        print(colors.red, "You are incorrect")
+        print(colors.red, "Incorrect, The answer is: ", answer)
         return 0
 
 def true_false_question(question, answer, fact):
@@ -65,18 +65,17 @@ def true_false_question(question, answer, fact):
         print("You are correct!")
         return 1
     else:
-        print(colors.red, "You are incorrect/n", fact)
-        print()
+        print(colors.red, "Incorrect, The answer is: ", answer, '\n', fact)
         return 0
 
 
 
 # TESTS
-multiple_choice_question(Q1, 'e')
-multiple_choice_question(Q2, 'b')
+multiple_choice_question(Q1, 'e\n')
+multiple_choice_question(Q2, 'b\n')
 
-numerical_question(Q3, '1')
-numerical_question(Q4, '1000')
+numerical_question(Q3, '1\n')
+numerical_question(Q4, '1000\n')
 
 true_false_question(Q5, 't', 'Snoopy, the Peanuts Comic Strip character is the astronauts personal safety mascot')
-true_false_question(Q6, 'f', 'She got her license in France')
+true_false_question(Q6, 'f', 'She got her license in France\n')
