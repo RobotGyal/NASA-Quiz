@@ -32,6 +32,7 @@ class colors:
     purple = '\033[35m'
     grey = '\033[37m'
     red='\033[31m'
+    green='\033[32m'
 
 
 
@@ -40,7 +41,7 @@ def multiple_choice_question(question, answer):
     print(colors.grey, question)
     user_answer = input("Input a choice (a-e): \n").lower()
     if user_answer == answer:
-        print("You are correct!")
+        print(colors.green, "You are correct!")
         return 1
     else:
         print(colors.red, "Incorrect, The answer is: ", answer)
@@ -50,7 +51,7 @@ def numerical_question(question, answer):
     print(colors.grey, question)
     user_answer = input("Input a number: \n")
     if user_answer == answer and user_answer.isdigit():
-        print("You are correct!")
+        print(colors.green, "You are correct!")
         return 1
     # elif user_answer == answer and user_answer.isdigit == False:
     #     print("Inproper format")
@@ -62,7 +63,7 @@ def true_false_question(question, answer, fact):
     print(colors.grey, question)
     user_answer = input("Enter True(t) or False(f): \n").lower()
     if user_answer == answer:
-        print("You are correct!")
+        print(colors.green, "You are correct!")
         return 1
     else:
         print(colors.red, "Incorrect, The answer is: ", answer, '\n', fact)
@@ -71,11 +72,11 @@ def true_false_question(question, answer, fact):
 
 
 # TESTS
-multiple_choice_question(Q1, 'e\n')
-multiple_choice_question(Q2, 'b\n')
+multiple_choice_question(Q1, 'e')
+multiple_choice_question(Q2, 'b')
 
-numerical_question(Q3, '1\n')
-numerical_question(Q4, '1000\n')
+numerical_question(Q3, '1')
+numerical_question(Q4, '1000')
 
 true_false_question(Q5, 't', 'Snoopy, the Peanuts Comic Strip character is the astronauts personal safety mascot')
 true_false_question(Q6, 'f', 'She got her license in France\n')
