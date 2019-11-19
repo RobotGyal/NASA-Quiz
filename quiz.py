@@ -34,6 +34,8 @@ class colors:
     red='\033[31m'
     green='\033[32m'
 
+correct_questions = []
+incorrect_questions = []
 
 
 # FUNCTIONS
@@ -42,9 +44,11 @@ def multiple_choice_question(question, answer):
     user_answer = input("Input a choice (a-e): \n").lower()
     if user_answer == answer:
         print(colors.green, "You are correct!")
+        correct_questions.append(user_answer)    
         return 1
     else:
         print(colors.red, "Incorrect, The answer is: ", answer)
+        incorrect_questions.append(user_answer)    
         return 0
 
 def numerical_question(question, answer):
@@ -52,11 +56,11 @@ def numerical_question(question, answer):
     user_answer = input("Input a number: \n")
     if user_answer == answer and user_answer.isdigit():
         print(colors.green, "You are correct!")
+        correct_questions.append(user_answer)
         return 1
-    # elif user_answer == answer and user_answer.isdigit == False:
-    #     print("Inproper format")
     else:
         print(colors.red, "Incorrect, The answer is: ", answer)
+        incorrect_questions.append(user_answer)
         return 0
 
 def true_false_question(question, answer, fact):
@@ -64,9 +68,11 @@ def true_false_question(question, answer, fact):
     user_answer = input("Enter True(t) or False(f): \n").lower()
     if user_answer == answer:
         print(colors.green, "You are correct!")
+        correct_questions.append(user_answer)
         return 1
     else:
         print(colors.red, "Incorrect, The answer is: ", answer, '\n', fact)
+        incorrect_questions.append(user_answer)
         return 0
 
 
@@ -80,3 +86,21 @@ numerical_question(Q4, '1000')
 
 true_false_question(Q5, 't', 'Snoopy, the Peanuts Comic Strip character is the astronauts personal safety mascot')
 true_false_question(Q6, 'f', 'She got her license in France\n')
+
+print("\nCorrect: ", len(correct_questions))
+print("Incorrect: ", len(incorrect_questions))
+
+
+# questions = {
+#     'Q1':Q1,
+#     'Q2':Q2,
+#     'Q3':Q3,
+#     'Q4':Q4,
+#     'Q5':Q5,
+#     'Q6':Q6,
+# }
+
+# for i in questions:
+#     print(i, '\n')
+# print(questions['Q2'])
+
