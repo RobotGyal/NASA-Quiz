@@ -1,31 +1,27 @@
 
-# Multiple Choice
-Q1 = "What is the literal definition of Equinox? \n a) Equal Dark  \n b) Year Night  \n c) Day Night  \n d) Day Dark  \n e) Equal Night\n"
-# equal night
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+QUIZ= ["What is the literal definition of Equinox? \n a) Equal Dark  \n b) Year Night  \n c) Day Night  \n d) Day Dark  \n e) Equal Night\n",
 
-Q2 = """Before NASA was formed, the National Advisory Committee for Aeronautics (NACA) was started
+"""Before NASA was formed, the National Advisory Committee for Aeronautics (NACA) was started
 to supervise and direct the scientific study of the problems of flight.
 The NACA also directed and conducted research and experiments in aeronautics.
 Which President found NACA?
-\n a) Franklin D. Roosevelt  \n b) Woodrow Wilson  \n c) Ronald Reagan  \n d) Theodore Roosevelt  \n e) John F. Kennedy\n"""
-# Woodrow Wilson
+\n a) Franklin D. Roosevelt  \n b) Woodrow Wilson  \n c) Ronald Reagan  \n d) Theodore Roosevelt  \n e) John F. Kennedy\n""",
 
-# Numerical Response
-Q3 = "NASA became operational how many years after the Soviets launched Sputnik 1, the world's first artificial satellite?"
-# 1
+"NASA became operational how many years after the Soviets launched Sputnik 1, the world's first artificial satellite?",
 
-Q4 = "How many Earth's would fit insode Jupiter?"
-# 1000
+"How many Earth's would fit insode Jupiter?",
 
+"""Apollo 10's command module was called "Charlie Brown" and the lunar module was called "Snoopy."  """,
 
-# True/False
-Q5 = """Apollo 10's command module was called "Charlie Brown" and the lunar module was called "Snoopy."  """
-# True
-# if answer = False, respond -> 
-
-Q6 = ''' Bessie Coleman, known as "Queen Bess, Daredevil Aviator," was the first African-American woman aviator.
+''' Bessie Coleman, known as "Queen Bess, Daredevil Aviator," was the first African-American woman aviator.
 She received her pilot's certificate in 1921 in America and learned stunt-flying there. '''
-# False, she got her license in France
+
+]
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+
+
 
 #Colors for use later
 class colors:
@@ -78,17 +74,17 @@ def true_false_question(question, answer, fact):
 
 
 # TESTS
-multiple_choice_question(Q1, 'e')
-multiple_choice_question(Q2, 'b')
+# multiple_choice_question(Q1, 'e')
+# multiple_choice_question(Q2, 'b')
 
-numerical_question(Q3, '1')
-numerical_question(Q4, '1000')
+# numerical_question(Q3, '1')
+# numerical_question(Q4, '1000')
 
-true_false_question(Q5, 't', 'Snoopy, the Peanuts Comic Strip character is the astronauts personal safety mascot')
-true_false_question(Q6, 'f', 'She got her license in France\n')
+# true_false_question(Q5, 't', 'Snoopy, the Peanuts Comic Strip character is the astronauts personal safety mascot')
+# true_false_question(Q6, 'f', 'She got her license in France\n')
 
-print("\nCorrect: ", len(correct_questions))
-print("Incorrect: ", len(incorrect_questions))
+# print("\nCorrect: ", len(correct_questions))
+# print("Incorrect: ", len(incorrect_questions))
 
 
 # questions = {
@@ -104,3 +100,7 @@ print("Incorrect: ", len(incorrect_questions))
 #     print(i, '\n')
 # print(questions['Q2'])
 
+# print(QUIZ[0])
+
+for count, ele in enumerate(QUIZ,1):
+    print(count, ele, '\n')
