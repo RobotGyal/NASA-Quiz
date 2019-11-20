@@ -1,7 +1,8 @@
 TO BE ADDED
-*  counting of correct/incorrect answers (in a list)
-*  numbering questions
-*  
+*  counting of correct/incorrect answers (in a list) √
+*  numbering questions √
+*  get different functions to work with numbered questions
+*  add menu
 
 
 STRETCH 
