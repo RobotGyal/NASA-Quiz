@@ -28,6 +28,9 @@ class colors:
     grey = '\033[37m'
     red='\033[31m'
     green='\033[32m'
+    blue = '\33[94m'
+    blink = '\33[5m'
+    end = '\33[0m'
 
 correct_questions = []
 incorrect_questions = []
@@ -89,24 +92,34 @@ while running:
 
     # for count, ele in enumerate(QUIZ,1):
     #     print(count, ele, '\n')
-    print(colors.purple, "\n\nWelcome to the NASA QUIZ!!!! Prepare to put your knowledge to the test!!\n")
+    print(colors.blue, "\n\nWelcome to the NASA QUIZ!!!! Prepare to put your knowledge to the test!!\n")
 
-    print(colors.purple, "\nThe first 2 questions will be multiple choice. Please enter a letter(a-e)\n")
+    print(colors.blue, "\nThe first 2 questions will be multiple choice. Please enter a letter(a-e)\n")
     multiple_choice_question(QUIZ[0], 'e')
     multiple_choice_question(QUIZ[1], 'b')
 
-    print(colors.purple, "\nThe next 2 questions will be numerical. Please enter a whole number\n")
+    print(colors.blue, "\nThe next 2 questions will be numerical. Please enter a whole number\n")
     numerical_question(QUIZ[2], '1')
     numerical_question(QUIZ[3], '1000')
 
-    print(colors.purple, "\nThe last 2 questions will be true/false. Please enter True(t) or False(f) \n")
+    print(colors.blue, "\nThe last 2 questions will be true/false. Please enter True(t) or False(f) \n")
     true_false_question(QUIZ[4], 't', 'Snoopy, the Peanuts Comic Strip character is the astronauts personal safety mascot')
     true_false_question(QUIZ[5], 'f', 'She got her license in France\n')
     
-    print(colors.grey, "\nCorrect: ", len(correct_questions))
+    print(colors.blink, "\nCorrect: ", len(correct_questions))
     print("Incorrect: ", len(incorrect_questions))
 
-    play_again = input("Would you like to play again? Press Yes(y) or No(n)\n").lower()
+    if len(correct_questions) < 2:
+        print(colors.blue, "\nYou put in good effort but try for higher next time!")
+    elif len(correct_questions) >= 2 and len(correct_questions) < 5:
+        print(colors.blue, "\nNot too shabby!")
+    else:
+        print(colors.blue, "\nYou are a master at NASA. Good Job Space Cadet!")
+
+
+
+    print(colors.end, colors.blue, "\nWould you like to play again?")
+    play_again = input("Press Yes(y) or No(n)\n").lower()
     if play_again == 'y':
         continue
     else:
