@@ -36,6 +36,7 @@ correct_questions = []
 incorrect_questions = []
 acceptable_letters = ['a', 'b', 'c', 'd', 'e']
 true_false = ['t', 'f']
+question_num = 1
 
 # FUNCTIONS
 def multiple_choice_question(question, answer):
@@ -88,7 +89,6 @@ def true_false_question(question, answer, fact):
 
 running = True
 while running:
-
     # for count, ele in enumerate(QUIZ,1):
     #     print(count, ele, '\n')
     print(colors.blue, "\n\nWelcome to the NASA QUIZ!!!! Prepare to put your knowledge to the test!!\n")
