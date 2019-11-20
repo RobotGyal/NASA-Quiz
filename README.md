@@ -1,7 +1,6 @@
 # NASA Quiz!
 
-![Image]('pic.jpg')
-
+![Image]('pic2.jpg')
 ## Prepare to test your skills in the ultimately short NASA quiz!
 
 ## Motivation
