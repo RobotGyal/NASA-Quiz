@@ -34,7 +34,8 @@ class colors:
 
 correct_questions = []
 incorrect_questions = []
-
+acceptable_letters = ['a', 'b', 'c', 'd', 'e']
+true_false = ['t', 'f']
 
 # FUNCTIONS
 def multiple_choice_question(question, answer):
@@ -44,6 +45,9 @@ def multiple_choice_question(question, answer):
         print(colors.green, "You are correct!")
         correct_questions.append(user_answer)    
         return 1
+    elif user_answer not in acceptable_letters:
+        print("\nInput out of bounds. Try again")
+        multiple_choice_question(question, answer)
     else:
         print(colors.red, "Incorrect, The answer is: ", answer)
         incorrect_questions.append(user_answer)    
@@ -56,6 +60,9 @@ def numerical_question(question, answer):
         print(colors.green, "You are correct!")
         correct_questions.append(user_answer)
         return 1
+    elif user_answer.isdigit() == False:
+        print("\nInput not a number. Try again")
+        numerical_question(question, answer)
     else:
         print(colors.red, "Incorrect, The answer is: ", answer)
         incorrect_questions.append(user_answer)
@@ -68,6 +75,9 @@ def true_false_question(question, answer, fact):
         print(colors.green, "You are correct!")
         correct_questions.append(user_answer)
         return 1
+    elif user_answer not in true_false:
+        print("\nInput out of bounds. Try again")
+        true_false_question(question, answer, fact)
     else:
         print(colors.red, "Incorrect, The answer is: ", answer, '\n', fact)
         incorrect_questions.append(user_answer)
@@ -75,17 +85,6 @@ def true_false_question(question, answer, fact):
 
 
 
-# TESTS
-# multiple_choice_question(Q1, 'e')
-# multiple_choice_question(Q2, 'b')
-
-# numerical_question(Q3, '1')
-# numerical_question(Q4, '1000')
-
-# true_false_question(Q5, 't', 'Snoopy, the Peanuts Comic Strip character is the astronauts personal safety mascot')
-# true_false_question(Q6, 'f', 'She got her license in France\n')
-
-# print(QUIZ[0])
 
 running = True
 while running:
@@ -115,7 +114,6 @@ while running:
         print(colors.blue, "\nNot too shabby!")
     else:
         print(colors.blue, "\nYou are a master at NASA. Good Job Space Cadet!")
-
 
 
     print(colors.end, colors.blue, "\nWould you like to play again?")
